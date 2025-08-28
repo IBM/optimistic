@@ -1,0 +1,709 @@
+DomainInfo for *
+  * Type:   Any
+  * Domain: <DUMMY#19: function-domain *>
+===========
+DomainInfo for /
+  * Type:   Any
+  * Domain: <DUMMY#25: function-domain />
+===========
+DomainInfo for *python-builtins*.optimistic_examples.room_allocation.resource_allocation_bom.Assignment
+  * Type:   Any
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.optimistic_client.optimization.OptimizationProblem
+  * Type:   Any
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.optimistic_examples.room_allocation.resource_allocation_bom.Resource
+  * Type:   Any
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.optimistic_client.unique_assignment.UniqueAssignment
+  * Type:   Any
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function get_office_availability.Comprehension Generator GETATTR(REF(a), rooms).a
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeAvailability
+  * Domain: building($self)
+  DomainInfo for rooms
+    * Type:   Integer
+    * Domain: DUMMY#49, value=InputValue('RoomAllocationProblem5', 'building', 'rooms')
+  DomainInfo for floor
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+    * Domain: DUMMY#41, value=InputValue('RoomAllocationProblem5', 'building', 'floor')
+  DomainInfo for office_type
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+    * Domain: DUMMY#50, value=InputValue('RoomAllocationProblem5', 'building', 'office_type')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function legal_assignment.Comprehension Generator OP(and; COMP(in; GETATTR(REF(a), resource), GETATTR(REF(self), employees)), COMP(in; GETATTR(REF(a), activity), CALL(GETATTR(REF(self), all_floors); ))).a
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.FloorAssignment
+  * Domain: solution($self)
+  DomainInfo for resource
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Employee
+    * Domain: employees($self)
+  DomainInfo for activity
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+    * Domain: $self.all_floors()
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function all_floors.Comprehension Set GETATTR(REF(a), floor).a
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeAvailability
+  * Domain: building($self)
+  DomainInfo for floor
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+    * Domain: DUMMY#41, value=InputValue('RoomAllocationProblem5', 'building', 'floor')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function objective1.Comprehension Generator CALL(GETATTR(REF(self), cost_penalty); REF(a1), REF(f1)).a1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Area
+  * Domain: $self.all_areas()
+===========
+DomainInfo for all
+  * Type:   (Stream[Any])->Boolean
+  * Domain: None
+===========
+DomainInfo for all_areas:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Set[@*python-builtins*.room_allocation_bom_5_all_in_one.Area]
+  * Domain: <DUMMY#31: function-domain all_areas>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.all_areas
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Set[@*python-builtins*.room_allocation_bom_5_all_in_one.Area]
+  * Domain: <DUMMY#3: function-result all_areas>
+===========
+DomainInfo for all_floors:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Set[@*python-builtins*.room_allocation_bom_5_all_in_one.Floor]
+  * Domain: <DUMMY#5: function-domain all_floors>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.all_floors
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Set[@*python-builtins*.room_allocation_bom_5_all_in_one.Floor]
+  * Domain: <DUMMY#2: function-result all_floors>
+===========
+DomainInfo for all_office_types:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Set[@*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType]
+  * Domain: <DUMMY#20: function-domain all_office_types>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.all_office_types
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Set[@*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType]
+  * Domain: <DUMMY#4: function-result all_office_types>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function area_utilization.area
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Area
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function cost_penalty.area
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Area
+  * Domain: None
+===========
+DomainInfo for area_utilization:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, @*python-builtins*.room_allocation_bom_5_all_in_one.Area, @*python-builtins*.room_allocation_bom_5_all_in_one.Floor)->Integer
+  * Domain: <DUMMY#23: function-domain area_utilization>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.area_utilization
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, @*python-builtins*.room_allocation_bom_5_all_in_one.Area, @*python-builtins*.room_allocation_bom_5_all_in_one.Floor)->Integer
+  * Domain: <DUMMY#22: function-result area_utilization>
+  * Decision variable
+===========
+DomainInfo for assigned_offices:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType, @*python-builtins*.room_allocation_bom_5_all_in_one.Floor)->Integer
+  * Domain: <DUMMY#28: function-domain assigned_offices>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.assigned_offices
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType, @*python-builtins*.room_allocation_bom_5_all_in_one.Floor)->Integer
+  * Domain: <DUMMY#27: function-result assigned_offices>
+  * Decision variable
+===========
+DomainInfo for ceil
+  * Type:   Any
+  * Domain: <DUMMY#26: function-domain ceil>
+===========
+DomainInfo for *python-builtins*.math.ceil
+  * Type:   (Number)->Integer
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.optimistic_client.meta.utils.constraint
+  * Type:   Any
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.constraint2
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Boolean
+  * Domain: <DUMMY#9: function-result constraint2>
+  * Decision variable
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.constraint3
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Boolean
+  * Domain: <DUMMY#21: function-result constraint3>
+  * Decision variable
+===========
+DomainInfo for cost_penalty:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, @*python-builtins*.room_allocation_bom_5_all_in_one.Area, @*python-builtins*.room_allocation_bom_5_all_in_one.Floor)->Number
+  * Domain: <DUMMY#30: function-domain cost_penalty>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.cost_penalty
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, @*python-builtins*.room_allocation_bom_5_all_in_one.Area, @*python-builtins*.room_allocation_bom_5_all_in_one.Floor)->Number
+  * Domain: <DUMMY#24: function-result cost_penalty>
+  * Decision variable
+===========
+DomainInfo for *python-builtins*.optimistic_client.meta.utils.count
+  * Type:   (Stream[Any])->Integer
+  * Domain: <DUMMY#14: function-domain count>
+===========
+DomainInfo for *python-builtins*.dataclasses.dataclass
+  * Type:   Any
+  * Domain: <DUMMY#1: function-domain dataclass>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function all_areas.Comprehension Set GETATTR(REF(e), area).e
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Employee
+  * Domain: employees($self)
+  DomainInfo for area
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Area
+    * Domain: DUMMY#42, value=InputValue('RoomAllocationProblem5', 'employees', 'area')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function constraint2.Comprehension Generator COMP(==; CALL(GETATTR(REF(self), unique_assignment); REF(e1)), CALL(GETATTR(REF(self), unique_assignment); CALL(GETATTR(REF(self), get_employee); GETATTR(REF(e1), team_lead)))).e1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Employee
+  * Domain: employees($self)
+  DomainInfo for team_lead
+    * Type:   Integer
+    * Domain: DUMMY#44, value=InputValue('RoomAllocationProblem5', 'employees', 'team_lead')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function area_utilization.Comprehension Generator REF(e1).e1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Employee
+  * Domain: employees($self)
+  DomainInfo for is_team_lead
+    * Type:   Boolean
+    * Domain: DUMMY#51, value=InputValue('RoomAllocationProblem5', 'employees', 'is_team_lead')
+  DomainInfo for area
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Area
+    * Domain: DUMMY#52, value=InputValue('RoomAllocationProblem5', 'employees', 'area')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function occupancy.Comprehension Generator REF(e1).e1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Employee
+  * Domain: employees($self)
+  DomainInfo for type
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.EmployeeType
+    * Domain: DUMMY#48, value=InputValue('RoomAllocationProblem5', 'employees', 'type')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function office_type_by_employee_type.Comprehension Generator GETATTR(REF(entry), office_type).entry
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeTypeByEmployeeType
+  * Domain: office_type_by_employee_type_table($self)
+  DomainInfo for office_type
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+    * Domain: DUMMY#45, value=InputValue('RoomAllocationProblem5', 'office_type_by_employee_type_table', 'office_type')
+  DomainInfo for employee_type
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.EmployeeType
+    * Domain: DUMMY#46, value=InputValue('RoomAllocationProblem5', 'office_type_by_employee_type_table', 'employee_type')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function objective1.Comprehension Generator CALL(GETATTR(REF(self), cost_penalty); REF(a1), REF(f1)).f1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+  * Domain: $self.all_floors()
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function constraint3.Comprehension Generator COMP(<=; CALL(GETATTR(REF(self), occupancy); REF(f1), REF(o1)), OP(*; GETATTR(REF(o1), max_occupancy), CALL(GETATTR(REF(self), get_office_availability); REF(f1), REF(o1)))).f1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+  * Domain: $self.all_floors()
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function total_cost.Comprehension Generator OP(*; CALL(GETATTR(REF(self), assigned_offices); REF(o1), REF(f1)), GETATTR(REF(o1), cost)).f1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+  * Domain: $self.all_floors()
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function area_utilization.f1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function assigned_offices.f1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function cost_penalty.f1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function get_office_availability.f1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+  * Domain: DUMMY#41, value=InputValue('RoomAllocationProblem5', 'building', 'floor')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function occupancy.f1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Floor
+  * Domain: None
+===========
+DomainInfo for floor_assignments
+  * Type:   Any
+  * Domain: None
+  * Decision variable
+===========
+DomainInfo for get_employee:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, Any)->@*python-builtins*.room_allocation_bom_5_all_in_one.Employee
+  * Domain: <DUMMY#8: function-domain get_employee>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.get_employee
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, Any)->@*python-builtins*.room_allocation_bom_5_all_in_one.Employee
+  * Domain: <DUMMY#8: function-domain get_employee>
+===========
+DomainInfo for get_office_availability:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, Any, Any)->Integer
+  * Domain: <DUMMY#18: function-domain get_office_availability>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.get_office_availability
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, Any, Any)->Integer
+  * Domain: <DUMMY#16: function-result get_office_availability>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.legal_assignment
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Boolean
+  * Domain: <DUMMY#6: function-result legal_assignment>
+  * Decision variable
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function get_employee.Comprehension Generator REF(m).m
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.Employee
+  * Domain: employees($self)
+  DomainInfo for number
+    * Type:   Integer
+    * Domain: DUMMY#47, value=InputValue('RoomAllocationProblem5', 'employees', 'number')
+===========
+DomainInfo for *python-builtins*.optimistic_client.meta.utils.memoize
+  * Type:   Any
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.optimistic_client.meta.utils.minimize
+  * Type:   Any
+  * Domain: <DUMMY#32: function-domain minimize>
+===========
+DomainInfo for next
+  * Type:   Any
+  * Domain: <DUMMY#10: function-domain next>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function get_employee.number
+  * Type:   Integer
+  * Domain: DUMMY#47, value=InputValue('RoomAllocationProblem5', 'employees', 'number')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function constraint3.Comprehension Generator COMP(<=; CALL(GETATTR(REF(self), occupancy); REF(f1), REF(o1)), OP(*; GETATTR(REF(o1), max_occupancy), CALL(GETATTR(REF(self), get_office_availability); REF(f1), REF(o1)))).o1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+  * Domain: $self.all_office_types()
+  DomainInfo for max_occupancy
+    * Type:   Integer
+    * Domain: <DUMMY#40: link-domain max_occupancy $o1>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function total_cost.Comprehension Generator OP(*; CALL(GETATTR(REF(self), assigned_offices); REF(o1), REF(f1)), GETATTR(REF(o1), cost)).o1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+  * Domain: $self.all_office_types()
+  DomainInfo for cost
+    * Type:   Number
+    * Domain: <DUMMY#54: link-domain cost $o1>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function assigned_offices.o1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+  * Domain: None
+  DomainInfo for max_occupancy
+    * Type:   Integer
+    * Domain: <DUMMY#40: link-domain max_occupancy $o1>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function get_office_availability.o1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+  * Domain: DUMMY#50, value=InputValue('RoomAllocationProblem5', 'building', 'office_type')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function occupancy.o1
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.objective1
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Number
+  * Domain: <DUMMY#33: function-result objective1>
+  * Decision variable
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.objective2
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Number
+  * Domain: <DUMMY#35: function-result objective2>
+  * Decision variable
+===========
+DomainInfo for occupancy:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, @*python-builtins*.room_allocation_bom_5_all_in_one.Floor, Any)->Integer
+  * Domain: <DUMMY#17: function-domain occupancy>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.occupancy
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, @*python-builtins*.room_allocation_bom_5_all_in_one.Floor, Any)->Integer
+  * Domain: <DUMMY#15: function-result occupancy>
+  * Decision variable
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function all_office_types.Comprehension Set GETATTR(REF(ofc), office_type).ofc
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeTypeByEmployeeType
+  * Domain: office_type_by_employee_type_table($self)
+  DomainInfo for office_type
+    * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+    * Domain: DUMMY#43, value=InputValue('RoomAllocationProblem5', 'office_type_by_employee_type_table', 'office_type')
+===========
+DomainInfo for office_type_by_employee_type:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, Any)->@*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+  * Domain: <DUMMY#13: function-domain office_type_by_employee_type>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.office_type_by_employee_type
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5, Any)->@*python-builtins*.room_allocation_bom_5_all_in_one.OfficeType
+  * Domain: <DUMMY#11: function-result office_type_by_employee_type>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function all_areas.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for employees
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.Employee]
+    * Domain: <DUMMY#37: link-domain employees $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'employees')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function all_floors.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for building
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.OfficeAvailability]
+    * Domain: <DUMMY#36: link-domain building $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'building')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function all_office_types.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for office_type_by_employee_type_table
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.OfficeTypeByEmployeeType]
+    * Domain: <DUMMY#38: link-domain office_type_by_employee_type_table $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'office_type_by_employee_type_table')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function area_utilization.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for employees
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.Employee]
+    * Domain: <DUMMY#37: link-domain employees $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'employees')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function assigned_offices.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function constraint2.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for employees
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.Employee]
+    * Domain: <DUMMY#37: link-domain employees $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'employees')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function constraint3.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function cost_penalty.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function get_employee.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for employees
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.Employee]
+    * Domain: <DUMMY#37: link-domain employees $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'employees')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function get_office_availability.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for building
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.OfficeAvailability]
+    * Domain: <DUMMY#36: link-domain building $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'building')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function legal_assignment.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for employees
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.Employee]
+    * Domain: <DUMMY#37: link-domain employees $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'employees')
+  DomainInfo for solution
+    * Type:   Set[@*python-builtins*.room_allocation_bom_5_all_in_one.FloorAssignment]
+    * Domain: <DUMMY#39: link-domain solution $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'solution')
+    * Decision variable
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function objective1.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function objective2.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function occupancy.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for employees
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.Employee]
+    * Domain: <DUMMY#37: link-domain employees $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'employees')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function office_type_by_employee_type.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+  DomainInfo for office_type_by_employee_type_table
+    * Type:   Collection[@*python-builtins*.room_allocation_bom_5_all_in_one.OfficeTypeByEmployeeType]
+    * Domain: <DUMMY#38: link-domain office_type_by_employee_type_table $self>
+    * Value:  InputValue('RoomAllocationProblem5', 'office_type_by_employee_type_table')
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function total_cost.self
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5',)
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.Function office_type_by_employee_type.t_emp
+  * Type:   @*python-builtins*.room_allocation_bom_5_all_in_one.EmployeeType
+  * Domain: DUMMY#46, value=InputValue('RoomAllocationProblem5', 'office_type_by_employee_type_table', 'employee_type')
+===========
+DomainInfo for total_cost:?->Any
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Number
+  * Domain: <DUMMY#34: function-domain total_cost>
+===========
+DomainInfo for *python-builtins*.room_allocation_bom_5_all_in_one.Class RoomAllocationProblem5.total_cost
+  * Type:   (@*python-builtins*.room_allocation_bom_5_all_in_one.RoomAllocationProblem5)->Number
+  * Domain: <DUMMY#29: function-result total_cost>
+  * Decision variable
+===========
+DomainInfo for unique_assignment:?->Any
+  * Type:   ?->Any
+  * Domain: <DUMMY#7: function-domain unique_assignment>
+===========
+DomainInfo for *python-builtins*.optimistic_client.unique_assignment.Class UniqueAssignment.unique_assignment
+  * Type:   ?->Any
+  * Domain: <DUMMY#7: function-domain unique_assignment>
+  * Decision variable
+DomainInfo for <DUMMY#1: function-domain dataclass>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#2: function-result all_floors>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#3: function-result all_areas>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#4: function-result all_office_types>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#5: function-domain all_floors>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#6: function-result legal_assignment>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#7: function-domain unique_assignment>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#8: function-domain get_employee>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#9: function-result constraint2>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#10: function-domain next>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#11: function-result office_type_by_employee_type>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#12: function-result get_employee>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#13: function-domain office_type_by_employee_type>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#14: function-domain count>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#15: function-result occupancy>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#16: function-result get_office_availability>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#17: function-domain occupancy>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#18: function-domain get_office_availability>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#19: function-domain *>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#20: function-domain all_office_types>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#21: function-result constraint3>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#22: function-result area_utilization>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#23: function-domain area_utilization>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#24: function-result cost_penalty>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#25: function-domain />
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#26: function-domain ceil>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#27: function-result assigned_offices>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#28: function-domain assigned_offices>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#29: function-result total_cost>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#30: function-domain cost_penalty>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#31: function-domain all_areas>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#32: function-domain minimize>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#33: function-result objective1>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#34: function-domain total_cost>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#35: function-result objective2>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#36: link-domain building $self>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#37: link-domain employees $self>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#38: link-domain office_type_by_employee_type_table $self>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#39: link-domain solution $self>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#40: link-domain max_occupancy $o1>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#41: link-domain floor $a>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'building', 'floor')
+===========
+DomainInfo for <DUMMY#42: link-domain area $e>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'employees', 'area')
+===========
+DomainInfo for <DUMMY#43: link-domain office_type $ofc>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'office_type_by_employee_type_table', 'office_type')
+===========
+DomainInfo for <DUMMY#44: link-domain team_lead $e1>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'employees', 'team_lead')
+===========
+DomainInfo for <DUMMY#45: link-domain office_type $entry>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'office_type_by_employee_type_table', 'office_type')
+===========
+DomainInfo for <DUMMY#46: link-domain employee_type $entry>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'office_type_by_employee_type_table', 'employee_type')
+===========
+DomainInfo for <DUMMY#47: link-domain number $m>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'employees', 'number')
+===========
+DomainInfo for <DUMMY#48: link-domain type $e1>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'employees', 'type')
+===========
+DomainInfo for <DUMMY#49: link-domain rooms $a>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'building', 'rooms')
+===========
+DomainInfo for <DUMMY#50: link-domain office_type $a>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'building', 'office_type')
+===========
+DomainInfo for <DUMMY#51: link-domain is_team_lead $e1>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'employees', 'is_team_lead')
+===========
+DomainInfo for <DUMMY#52: link-domain area $e1>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('RoomAllocationProblem5', 'employees', 'area')
+===========
+DomainInfo for <DUMMY#53: link-domain is_independent $self.get_employee(team_lead($e1))>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#54: link-domain cost $o1>
+  * Type:   ⊥
+  * Domain: None

@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+return a < 0 && a >= -2
+OPTIMISTIC_END
+

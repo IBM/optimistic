@@ -1,0 +1,10 @@
+SPREADSHEET_FRAME_NAME = '*spreadsheet*'
+
+RELATIVE_FRAME_NAME = '*...*'
+# RELATIVE_FRAME = Frame(RELATIVE_FRAME_NAME)
+
+PYTHON_USER_FRAME_NAME = '*python-user*'
+
+# DEBUG
+PYTHON_UNKNOWN_FRAME_NAME = '*python-unknowns*'
+

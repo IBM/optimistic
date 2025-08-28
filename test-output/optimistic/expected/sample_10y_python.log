@@ -1,0 +1,35 @@
+OPTIMISTIC_START
+return foo(bar, c1 + c2, True) not in {c1, c2}
+{x + 2 for x in boo.doIt()}
+{x + 2 for x in foo}
+{x * 2 for x in {1, 2} if x > 1 if x < 10}
+{x * 2 * y for x in {1, 2} if x > 1 if x < 10 for y in {3, 5}}
+{x * y for x in {1, 2} for y in {10, 20}}
+{x * y for x in {z + 1 for z in {0, 1}} for y in {10, 20}}
+{x * y for x in {z + 1 for z in {0, 1}} for y in {w + 10 for w in {0, 10}}}
+{(row[i] for row in [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]) for i in {0, 1, 2, 3}}
+{(row[i] for row in [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]) for i in {w for w in {0, 1, 2, 3}}}
+{y * x * z for y in {1, 2, 3} if y != 2 for x in {-1, 1, -1} if x != y for z in {10, 100} if z > x}
+f[a][b]
+f[a]
+x.do_something(a, b)
+values[1] - 100 if 100 < values[0] else values[2]
+max(values[1] - values[2], 0)
+max(a, b)
+a < 0 and a >= -2
+b > 0
+False
+b < 0
+True
+False
+a + c
+a * c
+a - c
+a / c
+a >= c
+a <= c
+a == c
+a != c
+True
+OPTIMISTIC_END
+

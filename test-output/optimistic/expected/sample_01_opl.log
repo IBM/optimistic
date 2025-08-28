@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+bar <= foo[bar][c1 + c2][1] && foo[bar][c1 + c2][1] not in {c1, c2}
+OPTIMISTIC_END
+

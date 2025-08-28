@@ -1,0 +1,8 @@
+OPTIMISTIC_START
+return b > 0
+False
+b < 0
+True
+False
+OPTIMISTIC_END
+

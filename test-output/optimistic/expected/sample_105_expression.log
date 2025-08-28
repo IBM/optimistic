@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(max($a, $b))
+OPTIMISTIC_END
+

@@ -1,0 +1,21 @@
+---
+test_e2e:
+  directory:
+    samples: "../test-data/optimistic/samples"
+    actual: "../test-output/optimistic/actual"
+    expected: "../test-output/optimistic/expected"
+    regression: "../test-output/optimistic/regression"
+  files:
+    - sample_100.py
+  raise_exception: True
+  create_opl: False
+  create_python: True
+  create_java: True
+  regression_diff: True
+  print_results: False
+  print_one_line: False
+symbol_table_config:
+  enable_code_testing: True
+  disable_imports_mockup: True
+  enable_attribute_analysis: False
+  debug: False

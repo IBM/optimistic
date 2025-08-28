@@ -1,0 +1,13 @@
+OPTIMISTIC_START
+boo.doIt().map((x) -> x + 2).collect(Collectors.toList())
+foo.map((x) -> x + 2).collect(Collectors.toList())
+List.of(1, 2).stream().filter((x) -> x > 1).filter((x) -> x < 10).map((x) -> x * 2).collect(Collectors.toList())
+List.of(1, 2).stream().filter((x) -> x > 1).filter((x) -> x < 10).flatMap((x) -> List.of(3, 5).stream().map((y) -> x * 2 * y)).collect(Collectors.toList())
+List.of(1, 2).stream().flatMap((x) -> List.of(10, 20).stream().map((y) -> x * y)).collect(Collectors.toList())
+List.of(0, 1).stream().map((z) -> z + 1).flatMap((x) -> List.of(10, 20).stream().map((y) -> x * y)).collect(Collectors.toList())
+List.of(0, 1).stream().map((z) -> z + 1).flatMap((x) -> List.of(0, 10).stream().map((w) -> w + 10).map((y) -> x * y)).collect(Collectors.toList())
+List.of(0, 1, 2, 3).stream().map((i) -> List.of(List.of(1, 2, 3, 4), List.of(5, 6, 7, 8), List.of(9, 10, 11, 12)).stream().map((row) -> (int) row.get(i)).collect(Collectors.toList())).collect(Collectors.toList())
+List.of(0, 1, 2, 3).stream().map((w) -> w).map((i) -> List.of(List.of(1, 2, 3, 4), List.of(5, 6, 7, 8), List.of(9, 10, 11, 12)).stream().map((row) -> (int) row.get(i)).collect(Collectors.toList())).collect(Collectors.toList())
+List.of(1, 2, 3).stream().filter((y) -> y != 2).flatMap((y) -> List.of(-1, 1, -1).stream().filter((x) -> x != y).flatMap((x) -> List.of(10, 100).stream().filter((z) -> z > x).map((z) -> y * x * z))).collect(Collectors.toList())
+OPTIMISTIC_END
+

@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+all(x >= 3 for y in {4, 3} if y < 4 for x in {3, y})
+OPTIMISTIC_END
+

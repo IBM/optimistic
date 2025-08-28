@@ -1,0 +1,10 @@
+OPTIMISTIC_START
+Math-Module(DEFINE foo(a:Integer, b:Number): Number = BODY DOC="
+    This function does something.
+
+    :param a: a param
+    :param b: b param
+    :return: sum of a and b
+    " DEFS=[DEFINE internal(): Any = $bar.f(1)] VALUE="$a + $b")
+OPTIMISTIC_END
+

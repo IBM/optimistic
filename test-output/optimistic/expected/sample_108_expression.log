@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(SET $x FOR x IN {c1*String*, c2*String*}; SET $x + 2 FOR x IN {c1*String*, c2*String*}; SET $x + 2*String* FOR x IN {c1*String*, c2*String*}; SET $x + 2 FOR x IN {1, 3})
+OPTIMISTIC_END
+

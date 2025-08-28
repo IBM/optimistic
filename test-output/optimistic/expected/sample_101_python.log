@@ -1,0 +1,12 @@
+OPTIMISTIC_START
+return a + c
+a * c
+a - c
+a / c
+a >= c
+a <= c
+a == c
+a != c
+True
+OPTIMISTIC_END
+

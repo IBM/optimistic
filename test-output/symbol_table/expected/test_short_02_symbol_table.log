@@ -1,0 +1,4 @@
+File: test_short_02.py
+AST: FILE(IMPORT(AS(itertools→doit))
+CALL(GETATTR(GETATTR(REF(doit), chain), from_iterable); LIST()))
+Expression: Math-Module($chain.from_iterable({}))

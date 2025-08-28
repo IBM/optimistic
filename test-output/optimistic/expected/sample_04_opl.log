@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+forall (bar in {1, "a"} : -2 != 1, foo in bar) foo == -2
+OPTIMISTIC_END
+

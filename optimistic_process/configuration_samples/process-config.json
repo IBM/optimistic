@@ -1,0 +1,32 @@
+{
+  "debug": false,
+  "log": true,
+  "do_profile": false,
+  "log_solver_profile": false,
+  "save_opl_model": true,
+  "simulate":{
+    "sample_size": 1,
+    "start_sample": -1,
+    "end_sample": -1,
+    "seed": 12345,
+    "kind": "external"
+  },
+  "origin": {
+    "Node": {
+      "by": "",
+      "value": ""
+    },
+    "Edge": {
+      "by": "",
+      "value": ""
+    },
+    "Init": {
+      "kind": "file",
+      "value": "origin-init.csv"
+    }
+  },
+  "origin_column_mapping": {
+    "by": "file",
+    "value": "column_mapping.json"
+  }
+}

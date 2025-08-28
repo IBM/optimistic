@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+x <= y * 2 / (v - w) && y * 2 / (v - w) <= z && a not in b || !(c in d)
+OPTIMISTIC_END
+

@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module($a < 0 ∧ $a ≥ -(2))
+OPTIMISTIC_END
+

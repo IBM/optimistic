@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(SET $x + 2 FOR x IN $foo)
+OPTIMISTIC_END
+

@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(STREAM($foo + -(2) FOR bar IN {1, a*String*} S.T. -(2) ≠ 1 FOR foo IN $bar))
+OPTIMISTIC_END
+

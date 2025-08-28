@@ -1,0 +1,87 @@
+float epsilon = 1e-10;
+
+// data structures:
+tuple OfficeTypeInfo {
+  int max_occupancy;
+  key string type_name;
+  float cost;
+}
+
+tuple OfficeAvailability {
+  key string floor;
+  key string office_type;
+  int rooms;
+}
+
+tuple Employee {
+  string type;
+  key string number;
+  string team_lead;
+  int is_team_lead;
+  int is_independent;
+  int area;
+}
+
+tuple FloorAssignment {
+  string resource;
+  string activity;
+}
+
+tuple OfficeTypeByEmployeeType {
+  key string employee_type;
+  string office_type;
+}
+
+// Inputs:
+{Employee} employees = ...;
+{OfficeAvailability} building = ...;
+{OfficeTypeByEmployeeType} office_type_by_employee_type_table = ...;
+{OfficeTypeInfo} office_info = ...;
+
+// Domains:
+{string} set_of_office_type_by_employee_type_table_employee_types = {an_office_type_by_employee_type_table.employee_type | an_office_type_by_employee_type_table in office_type_by_employee_type_table};
+{string} set_of_employee_numbers = {an_employee.number | an_employee in employees};
+{int} set_of_employee_areas = {an_employee.area | an_employee in employees};
+{string} set_of_building_floors = {a_building.floor | a_building in building};
+{string} set_of_all_office_types = {a_building.office_type | a_building in building} union {an_office_type_by_employee_type_table.office_type | an_office_type_by_employee_type_table in office_type_by_employee_type_table};
+{string} set_of_building_office_types = {a_building.office_type | a_building in building};
+
+// Variables:
+// Solution
+dvar boolean floor_assignments[set_of_employee_numbers][set_of_building_floors];
+{string} all_floors = {a.floor | a in building};
+{int} all_areas = {e.area | e in employees};
+{string} all_employees = {e.number | e in employees};
+{string} all_office_types = {ofc.office_type | ofc in office_type_by_employee_type_table};
+OfficeTypeInfo get_office_info[ot in set_of_all_office_types] = first({oti | oti in office_info : oti.type_name == ot});
+string office_type_by_employee_type[t_emp in set_of_office_type_by_employee_type_table_employee_types] = first({entry.office_type | entry in office_type_by_employee_type_table : entry.employee_type == t_emp});
+int get_office_availability[f1 in set_of_building_floors][o1 in set_of_building_office_types] = first({a.rooms | a in building : a.floor == f1 && a.office_type == o1});
+Employee get_employee[number in set_of_employee_numbers] = first({m | m in employees : m.number == number});
+// How many employees who need to be in offices of type o1 are placed on floor f1
+dvar int occupancy[set_of_building_floors][set_of_all_office_types];
+dvar int assigned_offices[set_of_all_office_types][set_of_building_floors];
+dvar int area_utilization[set_of_employee_areas][set_of_building_floors];
+dvar float area_penalty[set_of_employee_areas][set_of_building_floors];
+
+// Objective:
+// 1. N/A
+// 2. Minimize penalties of spreading areas over multiple floors
+minimize sum (o1 in all_office_types, f1 in all_floors) assigned_offices[o1][f1] * get_office_info[o1].cost + 20000 * (sum (a1 in all_areas, f1 in all_floors) area_penalty[a1][f1]);
+
+// Constraints
+subject to {
+    // Unique-assignment constraint
+    forall (resource in set_of_employee_numbers) sum (activity in set_of_building_floors) floor_assignments[resource][activity] == 1;
+
+    forall (e1 in employees : get_employee[e1.team_lead].is_independent == 0) forall (x in set_of_building_floors) floor_assignments[e1.number][x] == floor_assignments[e1.team_lead][x];
+
+    forall (o1 in all_office_types, f1 in all_floors) occupancy[f1][o1] <= get_office_info[o1].max_occupancy * get_office_availability[f1][o1];
+
+    forall (f1 in set_of_building_floors) forall (o1 in set_of_all_office_types) occupancy[f1][o1] == sum (e1 in employees : office_type_by_employee_type[e1.type] == o1) floor_assignments[e1.number][f1];
+
+    forall (o1 in set_of_all_office_types) forall (f1 in set_of_building_floors) assigned_offices[o1][f1] >= occupancy[f1][o1] / get_office_info[o1].max_occupancy && assigned_offices[o1][f1] <= occupancy[f1][o1] / get_office_info[o1].max_occupancy + 1 - epsilon;
+
+    forall (area in set_of_employee_areas) forall (f1 in set_of_building_floors) area_utilization[area][f1] == sum (e1 in employees : e1.is_team_lead == 1 && e1.area == area) floor_assignments[e1.number][f1];
+
+    forall (area in set_of_employee_areas) forall (f1 in set_of_building_floors) (area_utilization[area][f1] == 0 => area_penalty[area][f1] == 0.0) && (area_utilization[area][f1] >= 1 || area_utilization[area][f1] <= -1 => area_penalty[area][f1] == 1.0);
+}

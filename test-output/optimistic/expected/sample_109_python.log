@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+return {x + 2 for x in {'c1', 'c2'} if -2 != 1}
+OPTIMISTIC_END
+

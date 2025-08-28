@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(SET $x + 2 FOR x IN {c1*String*, c2*String*} S.T. -(2) ≠ 1)
+OPTIMISTIC_END
+

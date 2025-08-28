@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+{foo + -2 | bar in {1, "a"} : -2 != 1, foo in bar}
+OPTIMISTIC_END
+

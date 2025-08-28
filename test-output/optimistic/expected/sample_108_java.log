@@ -1,0 +1,7 @@
+OPTIMISTIC_START
+return Set.of('c1', 'c2').stream().map(x -> x).collect(Collectors.toSet())
+Set.of('c1', 'c2').stream().map(x -> x + 2).collect(Collectors.toSet())
+Set.of('c1', 'c2').stream().map(x -> x + '2').collect(Collectors.toSet())
+Set.of(1, 3).stream().map(x -> x + 2).collect(Collectors.toSet())
+OPTIMISTIC_END
+

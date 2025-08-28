@@ -1,0 +1,12 @@
+OPTIMISTIC_START
+@dataclass
+class Foo():
+    @classmethod
+    @foodec(2)
+    def cm(cls):
+        return cls
+@dataclass(frozen=True)
+class Bar():
+    pass
+OPTIMISTIC_END
+

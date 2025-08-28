@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+return foo(bar, c1 + c2, True) not in {c1, c2}
+OPTIMISTIC_END
+

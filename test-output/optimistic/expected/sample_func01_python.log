@@ -1,0 +1,16 @@
+OPTIMISTIC_START
+def foo(a: int, b: float) -> float:
+    """
+    This function does something.
+    
+        :param a: a param
+        :param b: b param
+        :return: sum of a and b
+    """
+    
+    def internal():
+        return bar.f(1)
+    
+    return a + b
+OPTIMISTIC_END
+

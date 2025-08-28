@@ -1,0 +1,16 @@
+OPTIMISTIC_START
+class Foo(dict, list):
+    """
+    A class definition, yay!
+    """
+    def f(self):
+        return 2
+    
+    def foo(self, a: int, b: float) -> float:
+        
+        def internal():
+            return self.f(1)
+        
+        return a + b
+OPTIMISTIC_END
+

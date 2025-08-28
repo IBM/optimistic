@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(∀y ∈ {4, 3} S.T. $y < 4 FOR x IN {3, $y}. $x ≥ 3)
+OPTIMISTIC_END
+

@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(CLASS Foo($dict, $list):  f1: String; f2: Number; f3: Integer)
+OPTIMISTIC_END
+

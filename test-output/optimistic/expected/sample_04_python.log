@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+all(foo == -2 for bar in {1, 'a'} if -2 != 1 for foo in bar)
+OPTIMISTIC_END
+

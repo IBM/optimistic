@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+return x.do_something(a, b)
+OPTIMISTIC_END
+

@@ -1,0 +1,196 @@
+DomainInfo for *python-builtins*.optimistic_client.optimization.OptimizationProblem
+  * Type:   Any
+  * Domain: None
+===========
+DomainInfo for all
+  * Type:   (Stream[Any])->Boolean
+  * Domain: None
+===========
+DomainInfo for all_k1:?->Any
+  * Type:   (@*python-builtins*.var_rep_opt_example1.TestOptimizationProblem)->Set[@*python-builtins*.var_rep_opt_example1.KT1]
+  * Domain: <DUMMY#4: function-domain all_k1>
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.all_k1
+  * Type:   (@*python-builtins*.var_rep_opt_example1.TestOptimizationProblem)->Set[@*python-builtins*.var_rep_opt_example1.KT1]
+  * Domain: <DUMMY#1: function-result all_k1>
+===========
+DomainInfo for all_k2:?->Any
+  * Type:   (@*python-builtins*.var_rep_opt_example1.TestOptimizationProblem)->Set[@*python-builtins*.var_rep_opt_example1.KT2]
+  * Domain: <DUMMY#5: function-domain all_k2>
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.all_k2
+  * Type:   (@*python-builtins*.var_rep_opt_example1.TestOptimizationProblem)->Set[@*python-builtins*.var_rep_opt_example1.KT2]
+  * Domain: <DUMMY#2: function-result all_k2>
+===========
+DomainInfo for bool_rep1s
+  * Type:   Any
+  * Domain: None
+  * Decision variable
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.c_bool1
+  * Type:   (@*python-builtins*.var_rep_opt_example1.TestOptimizationProblem)->Boolean
+  * Domain: <DUMMY#6: function-result c_bool1>
+  * Decision variable
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.c_bool2
+  * Type:   (@*python-builtins*.var_rep_opt_example1.TestOptimizationProblem)->Boolean
+  * Domain: <DUMMY#7: function-result c_bool2>
+  * Decision variable
+===========
+DomainInfo for *python-builtins*.math.ceil
+  * Type:   (Number)->Integer
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.optimistic_client.meta.utils.constraint
+  * Type:   Any
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.optimistic_client.meta.utils.count
+  * Type:   (Stream[Any])->Integer
+  * Domain: <DUMMY#3: function-domain count>
+===========
+DomainInfo for *python-builtins*.dataclasses.dataclass
+  * Type:   Any
+  * Domain: None
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function all_k1.Comprehension Set GETATTR(REF(inp), k1).inp
+  * Type:   @*python-builtins*.var_rep_opt_example1.Inputs
+  * Domain: input($self)
+  DomainInfo for k1
+    * Type:   @*python-builtins*.var_rep_opt_example1.KT1
+    * Domain: DUMMY#10, value=InputValue('TestOptimizationProblem', 'input', 'k1')
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function all_k2.Comprehension Set GETATTR(REF(inp), k2).inp
+  * Type:   @*python-builtins*.var_rep_opt_example1.Inputs
+  * Domain: input($self)
+  DomainInfo for k2
+    * Type:   @*python-builtins*.var_rep_opt_example1.KT2
+    * Domain: DUMMY#11, value=InputValue('TestOptimizationProblem', 'input', 'k2')
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function c_bool1.Comprehension Generator COMP(==; CALL(REF(count); GEN(REF(s) | FORC(REF(s)∈GETATTR(REF(self), solution); IFC(OP(and; COMP(==; GETATTR(REF(s), k1), REF(k1)), COMP(==; GETATTR(REF(s), k2), REF(k2))))))), CONST(2)).k1
+  * Type:   @*python-builtins*.var_rep_opt_example1.KT1
+  * Domain: $self.all_k1()
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function c_bool1.Comprehension Generator COMP(==; CALL(REF(count); GEN(REF(s) | FORC(REF(s)∈GETATTR(REF(self), solution); IFC(OP(and; COMP(==; GETATTR(REF(s), k1), REF(k1)), COMP(==; GETATTR(REF(s), k2), REF(k2))))))), CONST(2)).k2
+  * Type:   @*python-builtins*.var_rep_opt_example1.KT2
+  * Domain: $self.all_k2()
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function c_bool2.Comprehension Generator COMP(==; GETATTR(REF(s), out_str), CONST('a')).s
+  * Type:   @*python-builtins*.var_rep_opt_example1.BoolRep1
+  * Domain: solution($self)
+  DomainInfo for out_str
+    * Type:   @*python-builtins*.var_rep_opt_example1.ST1
+    * Domain: DUMMY#14, value=InputValue('TestOptimizationProblem', 'solution', 'out_str')
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function c_bool1.Comprehension Generator COMP(==; CALL(REF(count); GEN(REF(s) | FORC(REF(s)∈GETATTR(REF(self), solution); IFC(OP(and; COMP(==; GETATTR(REF(s), k1), REF(k1)), COMP(==; GETATTR(REF(s), k2), REF(k2))))))), CONST(2)).Comprehension Generator REF(s).s
+  * Type:   @*python-builtins*.var_rep_opt_example1.BoolRep1
+  * Domain: solution($self)
+  DomainInfo for k1
+    * Type:   @*python-builtins*.var_rep_opt_example1.KT1
+    * Domain: DUMMY#12, value=InputValue('TestOptimizationProblem', 'solution', 'k1')
+  DomainInfo for k2
+    * Type:   @*python-builtins*.var_rep_opt_example1.KT2
+    * Domain: DUMMY#13, value=InputValue('TestOptimizationProblem', 'solution', 'k2')
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function all_k1.self
+  * Type:   @*python-builtins*.var_rep_opt_example1.TestOptimizationProblem
+  * Domain: None
+  * Value:  InputValue('TestOptimizationProblem',)
+  DomainInfo for input
+    * Type:   Set[@*python-builtins*.var_rep_opt_example1.Inputs]
+    * Domain: <DUMMY#8: link-domain input $self>
+    * Value:  InputValue('TestOptimizationProblem', 'input')
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function all_k2.self
+  * Type:   @*python-builtins*.var_rep_opt_example1.TestOptimizationProblem
+  * Domain: None
+  * Value:  InputValue('TestOptimizationProblem',)
+  DomainInfo for input
+    * Type:   Set[@*python-builtins*.var_rep_opt_example1.Inputs]
+    * Domain: <DUMMY#8: link-domain input $self>
+    * Value:  InputValue('TestOptimizationProblem', 'input')
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function c_bool1.self
+  * Type:   @*python-builtins*.var_rep_opt_example1.TestOptimizationProblem
+  * Domain: None
+  * Value:  InputValue('TestOptimizationProblem',)
+  DomainInfo for solution
+    * Type:   Set[@*python-builtins*.var_rep_opt_example1.BoolRep1]
+    * Domain: <DUMMY#9: link-domain solution $self>
+    * Value:  InputValue('TestOptimizationProblem', 'solution')
+    * Decision variable
+===========
+DomainInfo for *python-builtins*.var_rep_opt_example1.Class TestOptimizationProblem.Function c_bool2.self
+  * Type:   @*python-builtins*.var_rep_opt_example1.TestOptimizationProblem
+  * Domain: None
+  * Value:  InputValue('TestOptimizationProblem',)
+  DomainInfo for solution
+    * Type:   Set[@*python-builtins*.var_rep_opt_example1.BoolRep1]
+    * Domain: <DUMMY#9: link-domain solution $self>
+    * Value:  InputValue('TestOptimizationProblem', 'solution')
+    * Decision variable
+===========
+DomainInfo for *python-builtins*.optimistic_client.unique_assignment.Class UniqueAssignment.unique_assignment
+  * Type:   Any
+  * Domain: None
+  * Decision variable
+DomainInfo for <DUMMY#1: function-result all_k1>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#2: function-result all_k2>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#3: function-domain count>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#4: function-domain all_k1>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#5: function-domain all_k2>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#6: function-result c_bool1>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#7: function-result c_bool2>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#8: link-domain input $self>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#9: link-domain solution $self>
+  * Type:   ⊥
+  * Domain: None
+===========
+DomainInfo for <DUMMY#10: link-domain k1 $inp>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('TestOptimizationProblem', 'input', 'k1')
+===========
+DomainInfo for <DUMMY#11: link-domain k2 $inp>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('TestOptimizationProblem', 'input', 'k2')
+===========
+DomainInfo for <DUMMY#12: link-domain k1 $s>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('TestOptimizationProblem', 'solution', 'k1')
+===========
+DomainInfo for <DUMMY#13: link-domain k2 $s>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('TestOptimizationProblem', 'solution', 'k2')
+===========
+DomainInfo for <DUMMY#14: link-domain out_str $s>
+  * Type:   ⊥
+  * Domain: None
+  * Value:  InputValue('TestOptimizationProblem', 'solution', 'out_str')

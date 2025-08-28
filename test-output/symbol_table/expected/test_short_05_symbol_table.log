@@ -1,0 +1,6 @@
+File: test_short_05.py
+AST: FILE(IMPORT(REF(requirements.expr))
+CALL(GETATTR(CALL(GETATTR(GETATTR(REF(requirements), expr), IFTE); ), describe); )
+CALL(GETATTR(CALL(GETATTR(CALL(GETATTR(GETATTR(REF(requirements), expr), Negation); ), to_code_rep); ), accept); CONST('a'))
+GETATTR(GETATTR(REF(requirements), expr), AGGREGATE_SYMBOL_MAP))
+Expression: Math-Module(IFTE().describe(); Negation().to_code_rep().accept(a*String*); $AGGREGATE_SYMBOL_MAP)

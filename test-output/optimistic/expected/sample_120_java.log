@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+return !List.of(c1, c2).contains(foo(bar, c1 + c2, true))
+OPTIMISTIC_END
+

@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+return {x + 2 for x in foo}
+OPTIMISTIC_END
+

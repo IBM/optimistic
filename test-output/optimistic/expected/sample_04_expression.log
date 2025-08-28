@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(∀bar ∈ {1, a*String*} S.T. -(2) ≠ 1 FOR foo IN $bar. $foo = -(2))
+OPTIMISTIC_END
+

@@ -1,0 +1,11 @@
+>>>>    Simulation for Test Optimistic generated
+-----------------------------------------------------------------
+Objective 1 on minimize area utilization is [15.0]
+Objective 2 on minimize total cost is [297894.445177]
+
+Constraint Legal Assignment is [True]
+Constraint on Employee same floor as team lead is [True]
+Constraint on floor occupancy less than floor capacity is [True]
+
+  Failed constraints: None (all pass)
+  Objective:  597894.445177

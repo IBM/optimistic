@@ -1,0 +1,26 @@
+{
+  "name": "multi-nodes",
+  "working_dir": "C:\\workspace\\git\\optimistic\\knoptimize\\process_tests",
+  "graph_model": {
+    "input_models": [
+      "C:\\workspace\\git\\groptimize\\groptimize\\src\\groptimize\\builtin\\flow-problem.json",
+      "C:\\workspace\\git\\groptimize\\groptimize\\src\\groptimize\\builtin\\regression-models.json",
+      "C:\\workspace\\git\\optimistic\\knoptimize\\graphs\\multi-nodes.json"
+    ]
+  },
+  "target_opl": {
+    "template_kind": "file", // "pkg", "str"
+    "template_str": "",
+    "template": "opl_template.txt",
+    "template_file": {
+      "searchpath": "C:\\workspace\\git\\optimistic\\knoptimize\\src\\knoptimize\\templates",
+      "encoding":"utf-8",
+      "followlinks": false
+    },
+    "template_pkg": {
+      "package_name": "optimistic_process",
+      "package_path": "templates",
+      "encoding":"utf-8"
+    }
+  }
+}

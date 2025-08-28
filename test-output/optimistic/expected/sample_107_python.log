@@ -1,0 +1,5 @@
+OPTIMISTIC_START
+return f[a]
+f[a, b]
+OPTIMISTIC_END
+

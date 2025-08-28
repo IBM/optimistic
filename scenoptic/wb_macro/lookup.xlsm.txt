@@ -1,0 +1,50 @@
+Function MultiFilter(SourceArray As Variant, Matches As Variant, Optional Include As Boolean, Optional CompareMode As VbCompareMethod = vbBinaryCompare) As Variant
+    Dim x&, Arr, sJoined$
+
+    For x = LBound(Matches) To UBound(Matches)
+        Arr = VBA.Filter(SourceArray, Matches(x), Include, CompareMode)
+        sJoined = sJoined & VBA.Join(Arr, ",") & ","
+    Next x
+
+    sJoined = Left(sJoined, Len(sJoined) - 1)
+    MultiFilter = Split(sJoined, ",")
+
+End Function
+
+Function MyFilter(range As range, criteria() As Variant) As Variant
+    MyFilter = MyFilterA(range.Value, criteria)
+End Function
+
+Function MyFilterA(dat As Variant, criteria() As Variant) As Variant
+    Dim dic As Object
+    Dim i As Long, j As Long
+    Set dic = CreateObject("Scripting.Dictionary")
+    For i = LBound(dat) To UBound(dat)
+        For j = LBound(criteria) To UBound(criteria)
+            If dat(i, 1) Like criteria(j) Then
+                dic.Add CStr(i), dat(i, 1)
+                Exit For
+            End If
+        Next
+    Next
+    MyFilterA = dic.Items
+End Function
+
+Function MAdvancedFilter() As Variant
+ Dim rgData As range, rgCriteria As range
+    Set rgData = ActiveSheet.range("B30").CurrentRegion
+    Debug.Print rgData.Cells.Address
+
+    Set rgCriteria = ActiveSheet.range("C46").CurrentRegion
+    Debug.Print rgCriteria.Cells.Address
+    rgData.AdvancedFilter xlFilterCopy, rgCriteria, ActiveCell
+End Function
+
+Function MyFilterEval() As Variant
+  Dim inp As range, x As Variant
+
+  With ActiveSheet
+   x = [FILTER(B31:E40, (B31:B40=J31) * (C31:C40 = J32), "")]
+  End With
+  MyFilterEval = x
+End Function

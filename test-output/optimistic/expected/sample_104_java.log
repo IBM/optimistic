@@ -1,0 +1,6 @@
+Logical expression a && b < 0
+OPTIMISTIC_START
+Logical expression a && b < 0
+ must consists of boolean operands
+OPTIMISTIC_END
+

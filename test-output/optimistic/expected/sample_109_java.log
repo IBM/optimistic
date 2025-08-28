@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+return Set.of("c1", "c2").stream().filter(x -> -2 != 1).map(x -> x + 2).collect(Collectors.toSet())
+OPTIMISTIC_END
+

@@ -1,0 +1,4 @@
+File: test_long_04.py
+AST: FILE(IMPORT-FROM(GETATTR(REF(optimistic_symbol), symbol_explore): AS(parse_file→doit))
+CALL(REF(*python-builtins*.optimistic_symbol.symbol_explore.doit); CONST('what ever file')))
+Expression: Math-Module(parse_file(what ever file*String*))

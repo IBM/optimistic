@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+return Math.max(a, b)
+OPTIMISTIC_END
+

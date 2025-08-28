@@ -1,0 +1,4 @@
+File: test_long.py
+AST: FILE(IMPORT-FROM(REF(itertools): REF(chain))
+CALL(GETATTR(REF(*python-builtins*.itertools.chain), from_iterable); LIST()))
+Expression: Math-Module($chain.from_iterable({}))

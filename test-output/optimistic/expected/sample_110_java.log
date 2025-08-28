@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+return foo.stream().map(x -> x + 2).collect(Collectors.toSet())
+OPTIMISTIC_END
+

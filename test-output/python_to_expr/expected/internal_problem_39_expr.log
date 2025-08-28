@@ -1,0 +1,4 @@
+Module [experiment.internal_problem_39] - Expression: 
+Math-Module(ALIAS Age AS Integer; ALIAS City AS String; CLASS @$record EmployeeData:  age: @*python-builtins*.experiment.internal_problem_39.Age; city: @*python-builtins*.experiment.internal_problem_39.City; CLASS InternalProblem($OptimizationProblem):  emplyees: Mapping[Tuple[]->String]; employee_info: Set[@*python-builtins*.experiment.internal_problem_39.EmployeeData]; employee_candidates: Mapping[@*python-builtins*.experiment.internal_problem_39.EmployeeData->String]; employee_cover: TotalMapping[@*python-builtins*.experiment.internal_problem_39.EmployeeData->String]; students_score: TotalMapping[@*python-builtins*.experiment.internal_problem_39.Age->Integer] = solution_variable(); DEFINE self.all_employees(): Any = SET age($a) FOR a IN employee_info($self))
+
+

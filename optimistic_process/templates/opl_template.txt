@@ -1,0 +1,17 @@
+{{ model }}
+
+execute PRINT_SOLUTION {
+  settings.displayPrecision=15
+  var dfile = new IloOplOutputFile("{{ output_file_path }}")
+  dfile.writeln("# Output Controlled")
+  {% for out in outputs %}
+  dfile.writeln("{{ out }}="+{{ out }})
+  {% endfor %}
+  dfile.writeln("")
+  dfile.writeln("# Inferred Variables")
+  {% for infer in inferred %}
+  dfile.writeln("{{ infer }}="+{{ infer }})
+  {% endfor %}
+  dfile.close()
+  writeln("Done Printing Output")
+}

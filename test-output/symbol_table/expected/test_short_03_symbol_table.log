@@ -1,0 +1,4 @@
+File: test_short_03.py
+AST: FILE(IMPORT(REF(optimistic_symbol.symbol_explore))
+CALL(GETATTR(GETATTR(REF(optimistic_symbol), symbol_explore), parse_file); CONST('what ever file')))
+Expression: Math-Module(parse_file(what ever file*String*))

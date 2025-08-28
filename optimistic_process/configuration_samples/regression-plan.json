@@ -1,0 +1,25 @@
+{
+  "regression_plan": {
+    "P1":{
+      "template": "LR",
+      "path": "P1.csv"
+    },
+    "P2": {
+      "template": "LR",
+      "path": "P2.csv"
+    },
+    "P3": {
+      "template": "LR",
+      "path": "P3.csv"
+    },
+    "P4": {
+      "template": "LR",
+      "path": "P4.csv"
+    },
+    "P5": {
+      "template": "LR",
+      "path": "P5.csv"
+    },
+    "default": "LR"
+  }
+}

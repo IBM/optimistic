@@ -1,0 +1,89 @@
+// data structures:
+tuple OfficeTypeInfo {
+  int max_occupancy;
+  key string type_name;
+  float cost;
+}
+
+tuple OfficeAvailability {
+  key string floor;
+  key string office_type;
+  int rooms;
+}
+
+tuple Employee {
+  string type;
+  key string number;
+  string team_lead;
+  int is_team_lead;
+  int is_independent;
+  int area;
+}
+
+tuple FloorAssignment {
+  string resource;
+  string activity;
+}
+
+tuple OfficeTypeByEmployeeType {
+  key string employee_type;
+  string office_type;
+}
+
+// Inputs:
+{Employee} employees = ...;
+{OfficeAvailability} building = ...;
+{OfficeTypeByEmployeeType} office_type_by_employee_type_table = ...;
+{OfficeTypeInfo} office_info = ...;
+
+// Domains:
+{string} set_of_office_type_by_employee_type_table_employee_types = {an_office_type_by_employee_type_table.employee_type | an_office_type_by_employee_type_table in office_type_by_employee_type_table};
+{string} set_of_employee_numbers = {an_employee.number | an_employee in employees};
+{string} set_of_building_floors = {a_building.floor | a_building in building};
+{string} set_of_building_office_types = {a_building.office_type | a_building in building};
+
+// Legal solutions:
+{FloorAssignment} legal_floor_assignments = {<resource, activity> | resource in *** E03: No source found for solution field resource ***, activity in *** E03: No source found for solution field activity ***};
+
+// Variables:
+// Solution
+dvar boolean floor_assignments[legal_floor_assignments];
+{string} all_floors = {a.floor | a in building};
+{int} all_areas = {e.area | e in employees};
+{string} all_employees = {e.number | e in employees};
+{string} all_office_types = {ofc.office_type | ofc in office_type_by_employee_type_table};
+string office_type_by_employee_type[t_emp in set_of_office_type_by_employee_type_table_employee_types] = first({entry.office_type | entry in office_type_by_employee_type_table : entry.employee_type == t_emp});
+Employee get_employee[number in set_of_employee_numbers] = first({m | m in employees : m.number == number});
+// How many employees who need to be in offices of type o1 are placed on floor f1
+dvar int occupancy[*** E01: no value for parameter f1 ***][*** E01: no value for parameter o1 ***];
+int get_office_availability[f1 in set_of_building_floors][o1 in set_of_building_office_types] = first({a.rooms | a in building : a.floor == f1 && a.office_type == o1});
+dvar int area_utilization[*** E01: no value for parameter area ***][*** E01: no value for parameter f1 ***];
+dvar float cost_penalty[*** E01: no value for parameter area ***][*** E01: no value for parameter f1 ***];
+OfficeTypeInfo get_office_info[ot in *** E01: no value for parameter ot ***] = first({oti | oti in office_info : oti.type_name == ot});
+dvar int assigned_offices[*** E01: no value for parameter o1 ***][*** E01: no value for parameter f1 ***];
+dvar float total_cost;
+
+// Objective:
+// 1. Minimize penalties of spreading areas over multiple floors
+// 2. N/A
+minimize 20000 * (sum (a1 in all_areas, f1 in all_floors) cost_penalty[a1][f1]) + total_cost;
+
+// Constraints
+subject to {
+    // Unique-assignment constraint
+    forall (resource in *** E03: No source found for solution field resource ***) sum (activity in *** E03: No source found for solution field activity ***) floor_assignments[<resource, activity>] == 1;
+
+    forall (e1 in employees : get_employee[e1.team_lead].is_independent == 0) forall (x in *** E04: no domain for type Floor ***) floor_assignments[<e1.number, x>] == floor_assignments[<e1.team_lead, x>];
+
+    forall (o1 in all_office_types, f1 in all_floors) occupancy[f1][o1] <= get_office_info[o1].max_occupancy * get_office_availability[f1][o1];
+
+    forall (f1 in *** E01: no value for parameter f1 ***) forall (o1 in *** E01: no value for parameter o1 ***) occupancy[f1][o1] == sum (e1 in employees : office_type_by_employee_type[e1.type] == o1) floor_assignments[<e1.number, f1>];
+
+    forall (area in *** E01: no value for parameter area ***) forall (f1 in *** E01: no value for parameter f1 ***) area_utilization[area][f1] == sum (e1 in employees : e1.is_team_lead == 1 && e1.area == area) floor_assignments[<e1.number, f1>];
+
+    forall (area in *** E01: no value for parameter area ***) forall (f1 in *** E01: no value for parameter f1 ***) (area_utilization[area][f1] == 0 => cost_penalty[area][f1] == 0.0) && (area_utilization[area][f1] >= 1 || area_utilization[area][f1] <= -1 => cost_penalty[area][f1] == 1.0);
+
+    forall (o1 in *** E01: no value for parameter o1 ***) forall (f1 in *** E01: no value for parameter f1 ***) assigned_offices[o1][f1] >= occupancy[f1][o1] / get_office_info[o1].max_occupancy && assigned_offices[o1][f1] <= occupancy[f1][o1] / get_office_info[o1].max_occupancy + 1 - 1e-10;
+
+    total_cost == sum (o1 in all_office_types, f1 in all_floors) assigned_offices[o1][f1] * get_office_info[o1].cost;
+}

@@ -1,0 +1,9 @@
+OPTIMISTIC_START
+class Foo(dict, list):
+    f1: str
+    
+    f2: float
+    
+    f3: int
+OPTIMISTIC_END
+

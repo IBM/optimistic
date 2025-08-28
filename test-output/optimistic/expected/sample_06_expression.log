@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module($x ≤ $y * 2 / ($v - $w) ∧ $y * 2 / ($v - $w) ≤ $z ∧ $a ∉ $b ∨ ¬($c ∈ $d))
+OPTIMISTIC_END
+

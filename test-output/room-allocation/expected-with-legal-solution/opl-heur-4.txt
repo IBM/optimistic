@@ -1,0 +1,88 @@
+// data structures:
+tuple Area1 {
+  string name;
+}
+
+tuple Floor1 {
+  string desginator;
+}
+
+tuple OfficeAvailability {
+  key string floor;
+  key OfficeType office_type;
+  int rooms;
+}
+
+tuple Employee {
+  EmployeeType type;
+  key int number;
+  int team_lead;
+  int is_team_lead;
+  int is_independent;
+  string area;
+}
+
+tuple FloorAssignment {
+  Employee resource;
+  string activity;
+}
+
+tuple OfficeTypeByEmployeeType {
+  key EmployeeType employee_type;
+  OfficeType office_type;
+}
+
+// Inputs:
+{Employee} employees = ...;
+{OfficeAvailability} building = ...;
+{OfficeTypeByEmployeeType} office_type_by_employee_type_table = ...;
+
+// Domains:
+{EmployeeType} set_of_office_type_by_employee_type_table_employee_types = {an_office_type_by_employee_type_table.employee_type | an_office_type_by_employee_type_table in office_type_by_employee_type_table};
+{string} set_of_employee_areas = {an_employee.area | an_employee in employees};
+{string} set_of_building_floors = {a_building.floor | a_building in building};
+{OfficeType} set_of_all_office_types = {a_building.office_type | a_building in building} union {an_office_type_by_employee_type_table.office_type | an_office_type_by_employee_type_table in office_type_by_employee_type_table};
+{int} set_of_employee_numbers = {an_employee.number | an_employee in employees};
+{OfficeType} set_of_building_office_types = {a_building.office_type | a_building in building};
+
+// Legal solutions:
+{FloorAssignment} legal_floor_assignments = {<resource, activity> | resource in employees, activity in set_of_building_floors};
+
+// Variables:
+// Solution
+dvar boolean floor_assignments[legal_floor_assignments];
+{string} all_floors = {a.floor | a in building};
+{string} all_areas = {e.area | e in employees};
+OfficeType office_type_by_employee_type[t_emp in set_of_office_type_by_employee_type_table_employee_types] = first({entry.office_type | entry in office_type_by_employee_type_table : entry.employee_type == t_emp});
+Employee get_employee[number in set_of_employee_numbers] = first({m | m in employees : m.number == number});
+dvar int occupancy[*** E01: no value for parameter f1 ***][set_of_all_office_types];
+int get_office_availability[f1 in set_of_building_floors][o1 in set_of_building_office_types] = first({a.rooms | a in building : a.floor == f1 && a.office_type == o1});
+dvar int area_utilization[set_of_employee_areas][set_of_building_floors];
+dvar float cost_penalty[set_of_employee_areas][set_of_building_floors];
+dvar int assigned_offices[set_of_all_office_types][set_of_building_floors];
+dvar float total_cost;
+
+// Objective:
+// 1. Minimize penalties of spreading areas over multiple floors
+// 2. N/A
+minimize 20000 * (sum (a1 in all_areas, f1 in all_floors) cost_penalty[a1][f1]) + total_cost;
+
+// Constraints
+subject to {
+    // Unique-assignment constraint
+    forall (resource in employees) sum (activity in set_of_building_floors) floor_assignments[<resource, activity>] == 1;
+
+    forall (e1 in employees : get_employee[e1.team_lead].is_independent == 0) forall (x in set_of_building_floors) floor_assignments[<e1, x>] == floor_assignments[<get_employee[e1.team_lead], x>];
+
+    forall (o1 in members, f1 in all_floors) occupancy[f1][o1] <= o1.max_occupancy * get_office_availability[f1][o1];
+
+    forall (f1 in *** E01: no value for parameter f1 ***) forall (o1 in set_of_all_office_types) occupancy[f1][o1] == sum (e1 in employees : office_type_by_employee_type[e1.type] == o1) floor_assignments[<e1, f1>];
+
+    forall (area in set_of_employee_areas) forall (f1 in set_of_building_floors) area_utilization[area][f1] == sum (e1 in employees : e1.is_team_lead == 1 && e1.area == area) floor_assignments[<e1, f1>];
+
+    forall (area in set_of_employee_areas) forall (f1 in set_of_building_floors) (area_utilization[area][f1] == 0 => cost_penalty[area][f1] == 0.0) && (area_utilization[area][f1] >= 1 || area_utilization[area][f1] <= -1 => cost_penalty[area][f1] == 1.0);
+
+    forall (o1 in set_of_all_office_types) forall (f1 in set_of_building_floors) assigned_offices[o1][f1] >= occupancy[f1][o1] / o1.max_occupancy && assigned_offices[o1][f1] <= occupancy[f1][o1] / o1.max_occupancy + 1 - 1e-10;
+
+    total_cost == sum (o1 in members, f1 in all_floors) assigned_offices[o1][f1] * o1.cost;
+}

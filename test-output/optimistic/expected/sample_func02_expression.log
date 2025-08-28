@@ -1,0 +1,6 @@
+OPTIMISTIC_START
+Math-Module(CLASS Foo($dict, $list): DOC="
+    A class definition, yay!
+    " DEFINE self.f(): Any = 2; DEFINE self.foo(a:Integer, b:Number): Number = BODY DEFS=[DEFINE internal(): Any = $self.f(1)] VALUE="$a + $b")
+OPTIMISTIC_END
+

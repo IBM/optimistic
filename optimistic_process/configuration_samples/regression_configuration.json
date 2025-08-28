@@ -1,0 +1,27 @@
+{
+  "regression_model": {
+    "do_regression": false,
+    "compute_from_pickles": false,
+    "save_pickle": true,
+    "save_to_registry": true,
+    "base_root_path": "C:\\workspace\\git\\optimistic\\knoptimize",
+    "data_root_path": "C:\\workspace\\git\\optimistic\\knoptimize\\data\\tests-multi-nodes",
+    "models_pickle_store_path": "C:\\workspace\\git\\optimistic\\knoptimize\\process_tests\\kn_regression_registry_pickles",
+    "models_store_path": "C:\\workspace\\git\\optimistic\\knoptimize\\process_tests\\kn_regression_registry"
+  },
+  "pre_process_kind": null,
+  "algorithm_params": {
+    "LR": {
+    },
+    "RF": {
+      "n_estimators": 10,
+      "random_state": 12345
+    },
+    "NN": {
+      "random_state": 2345,
+      "hidden_layer_sizes": 3
+    },
+    "MARS": {
+    }
+  }
+}

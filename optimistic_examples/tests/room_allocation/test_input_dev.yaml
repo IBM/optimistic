@@ -1,0 +1,6 @@
+---
+examples:
+ room_allocation:
+  data:
+   solution_file: "../../room_allocation/data/room-allocation-optimistic-output.json"
+   csv_path: "../../room_allocation/data/csv/"

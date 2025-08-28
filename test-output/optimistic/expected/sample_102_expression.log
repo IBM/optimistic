@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module($b > 0; False*Boolean*; $b < 0; True*Boolean*; False*Boolean*)
+OPTIMISTIC_END
+

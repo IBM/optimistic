@@ -1,0 +1,110 @@
+Function CARTZZ(opX As range, opY As range) As Variant
+Dim cellX As range
+Dim cellY As range
+Dim result As Variant, size As Integer
+
+
+Dim loc As Integer
+loc = 0
+size = opX.Rows.Count * opY.Rows.Count - 1
+ReDim result(size, 1)
+
+For Each cellX In opX
+    For Each cellY In opY
+       result(loc, 0) = cellX.Value
+       result(loc, 1) = cellY.Value
+       loc = loc + 1
+    Next cellY
+Next cellX
+CARTZZ = result
+End Function
+
+
+Function CARTMM(opX As range, opY As range) As Variant
+    Dim result As Variant, size As Integer, scolx As Integer, scoly As Integer
+    Dim rowx As range, rowy As range, colx As range, coly As range
+    Dim locr As Integer, locc As Integer
+
+    size = opX.Rows.Count * opY.Rows.Count - 1
+    scolx = opX.Columns.Count
+    scoly = opY.Columns.Count
+
+    ReDim result(size, scolx + scoly - 1)
+
+    locr = 0
+    For Each rowx In opX.Rows
+        For Each rowy In opY.Rows
+            locc = 0
+            For Each colx In rowx.Cells
+                result(locr, locc) = colx.Value
+                locc = locc + 1
+            Next colx
+            For Each coly In rowy.Cells
+                result(locr, locc) = coly.Value
+                locc = locc + 1
+            Next coly
+            locr = locr + 1
+        Next rowy
+    Next rowx
+
+    CARTMM = result
+End Function
+
+
+Function CPRODUCT(ParamArray data() As Variant)
+    Dim rsize As Integer, csize As Integer
+    Dim result As Variant
+    Dim first As Variant, second As range
+    Dim f_rows As Integer, f_cols As Integer, s_rows As Integer, s_cols As Integer
+    Dim tbl As ListObject
+    Dim addedRow As ListRow
+    Dim rowCounter As Long
+
+    f_rows = data(0).Rows.Count
+    f_cols = data(0).Columns.Count
+
+    s_rows = data(1).Rows.Count
+    s_cols = data(1).Columns.Count
+
+    result = CARTMM_4_ARRAY(data(0).Value, f_rows, f_cols, data(1).Value, s_rows, s_cols)
+
+    For i = 2 To UBound(data, 1)
+        f_rows = f_rows * s_rows
+        f_cols = f_cols + s_cols
+        s_rows = data(i).Rows.Count
+        s_cols = data(i).Columns.Count
+        result = CARTMM_4_ARRAY(result, f_rows, f_cols, data(i).Value, s_rows, s_cols)
+    Next i
+
+    CPRODUCT = result
+End Function
+
+
+Private Function CARTMM_4_ARRAY(opX As Variant, xrow As Integer, xcol As Integer, opY As Variant, yrow As Integer, ycol As Integer)
+    Dim locr As Integer
+    Dim rowx As Integer, rowy As Integer, colx As Integer, coly As Integer
+    Dim result As Variant
+    Dim rsize As Integer, csize As Integer
+
+    rsize = xrow * yrow
+    csize = xcol + ycol
+
+    ReDim result(1 To rsize, 1 To csize)
+
+    locr = 1
+    For rowx = 1 To xrow
+        For rowy = 1 To yrow
+            locc = 1
+            For colx = 1 To xcol
+                result(locr, locc) = opX(rowx, colx)
+                locc = locc + 1
+            Next colx
+            For coly = 1 To ycol
+                result(locr, locc) = opY(rowy, coly)
+                locc = locc + 1
+            Next coly
+            locr = locr + 1
+        Next rowy
+    Next rowx
+    CARTMM_4_ARRAY = result
+End Function

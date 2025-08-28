@@ -1,0 +1,37 @@
+// data structures:
+tuple Inputs {
+  key string k1;
+  key string k2;
+  string s1;
+}
+
+tuple BoolRep1 {
+  key string k1;
+  key string k2;
+  string out_str;
+}
+
+// Inputs:
+{Inputs} input = ...;
+
+// Domains:
+{string} set_of_input_k1s = {an_input.k1 | an_input in input};
+{string} set_of_input_k2s = {an_input.k2 | an_input in input};
+{string} set_of_input_s1s = {an_input.s1 | an_input in input};
+
+// Variables:
+// Solution
+dvar boolean bool_rep1s[set_of_input_k1s][set_of_input_k2s][set_of_input_s1s];
+{string} all_k1 = {inp.k1 | inp in input};
+{string} all_k2 = {inp.k2 | inp in input};
+
+// Objective:
+
+minimize 0;
+
+// Constraints
+subject to {
+    forall (k1 in all_k1, k2 in all_k2) sum (s in bool_rep1s : s.k1 == k1 && s.k2 == k2) 1 == 2;
+
+    forall (s in bool_rep1s) s.out_str == "a";
+}

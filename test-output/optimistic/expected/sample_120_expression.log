@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(foo($bar, $c1 + $c2, True*Boolean*) ∉ {$c1, $c2})
+OPTIMISTIC_END
+

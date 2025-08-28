@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module($a + $c; $a * $c; $a - $c; $a / $c; $a ≥ $c; $a ≤ $c; $a = $c; $a ≠ $c; True*Boolean*)
+OPTIMISTIC_END
+

@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+Math-Module(DATA-CLASS @$dataclass Foo:  DEFINE @$classmethod @foodec(2) cls.cm(): Any = $cls; DATA-CLASS @dataclass(frozen=True*Boolean*) Bar: )
+OPTIMISTIC_END
+

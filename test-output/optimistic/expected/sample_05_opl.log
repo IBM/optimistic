@@ -1,0 +1,4 @@
+OPTIMISTIC_START
+forall (y in {4, 3} : y <= 4 - epsilon, x in {3, y}) x >= 3
+OPTIMISTIC_END
+
