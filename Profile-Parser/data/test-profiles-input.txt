@@ -1,0 +1,35 @@
+the sum of the duration of l1 for all Legs l1 in d1 such that the type of l1 is in {"Flight", "Travel", "Other-carrier", "Simulator"} is between 12.01 and 14
+
+the sum of the duration of l1 for all Legs l1 in d1 such that the type of l1 is in {"Flight", "Travel", "Other-carrier", "Simulator"} is at least 12
+
+the departure station of the first Leg of d1 is a base station and the arrival station of the last leg of d1 is not a base station
+
+there is a leg l1 in d1 such that l1 visits "CAI" and the flight-number of l1 is in {400, 401}
+
+the departure station of l1 is a base station and the arrival station of l1 is not a base station and (the departure station or the arrival station) of l1 is in {"HAV", "MIA", "IAD"}
+
+every Leg l1 of d1 is abroad, and the arrival station of l1 is not a base station, and the duration of d1 is at most 12
+
+every Leg l1 of d1 is abroad and the arrival station of l1 is not a base station, and the duration of d1 is at most 12
+
+every Leg l1 of d1 is abroad and the arrival station of l1 is not a base station and the duration of d1 is at most 12
+
+every Leg l1 of d1 is abroad, and the arrival station of l1 is not a base station and the duration of d1 is at most 12
+
+there is a Leg l1 in t1 such that the activity of l1 is "ALV"
+
+there is a Leg l1 in t1 such that the activity of l1 is "SBY" and the length of (the intersection of the period of l1 and 08:00-20:00) is at least 20% of 12 and the type of the aircraft of l1 is in {"77W", "333", "332"}
+
+there is a Leg l1 in d1 such that l1 visits "LAX" and for all Leg l2 in d1, the type of l2 is not "Travel"
+
+there are different Legs l1, l2 in d such that l1 is operational and l2 is operational and the type of the aircraft of l1 is "77W" and the type of the aircraft of l2 is "77W" and the flight-number of (l1 or l2) is 504
+
+there is a Leg l1 in p1 such that l1 visits USA and there is a Leg l2 in p1 such that the type of l2 is "Travel"
+
+there are Legs l1, l2, l3 in d1 such that for each l0 in {l1, l2, l3}, l0 is operational and the flight-number of l0 is in {2800, 1370, 1226, 2100, 2118}
+
+the departure station of the first Leg of p1 is "SVO" and there is a Duty d1 in p1 such that the departure station of the first Leg of d1 is "KJA" and d1 is not quicky
+
+the departure station of the first Leg of p1 is "SVO" and there are Legs l1 and l2 in p1 such that l2 follows l1 in p and l1 visits X and l2 visits Y
+
+there are Duties d1 and d2 in p1 such that d1 has one Leg l1 and d2 has one Leg l2 and the departure station of l1 is "SVO" and the arrival station of l2 is "KJA" and d2 immediately follows d1 in p1
